@@ -41,10 +41,3 @@ To run this project on your local machine:
 4. **View the site**
    Open [http://localhost:3000](http://localhost:3000) in your browser to view the portfolio.
 
-## 📄 Deploying
-
-The easiest way to deploy this Next.js app is to use the [Vercel Platform](https://vercel.com/new).
-
-1. Push your code to your GitHub repository.
-2. Import the repository into Vercel.
-3. Deploy!
