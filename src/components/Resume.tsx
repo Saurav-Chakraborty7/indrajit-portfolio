@@ -44,13 +44,6 @@ export default function Resume() {
               <HiDownload className="w-5 h-5" />
               Download Resume
             </a>
-
-            <p className="text-xs text-slate-400 mt-4">
-              Place your resume PDF at{" "}
-              <code className="text-cyan-600 bg-cyan-50 px-1.5 py-0.5 rounded text-[11px]">
-                public/resume.pdf
-              </code>
-            </p>
           </div>
         </motion.div>
       </div>

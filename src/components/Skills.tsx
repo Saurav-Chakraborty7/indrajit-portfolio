@@ -97,16 +97,18 @@ export default function Skills() {
 
           {/* Editor Body */}
           <div className="p-6 sm:p-8 overflow-x-auto bg-white/40">
-             <div className="flex min-w-max">
+             <div className="flex w-full">
                 {/* Line numbers */}
-                <div className="hidden sm:flex flex-col text-slate-400 font-mono text-right pr-6 select-none border-r border-cyan-100 mr-6">
+                <div className="hidden sm:flex flex-col text-slate-400 font-mono text-right pr-6 select-none border-r border-cyan-100 mr-6 shrink-0">
                   {Array.from({ length: 22 }).map((_, i) => (
                     <span key={i} className="leading-relaxed">{i + 1}</span>
                   ))}
                 </div>
                 
                 {/* Code Content */}
-                {renderCodeView()}
+                <div className="w-full">
+                  {renderCodeView()}
+                </div>
              </div>
           </div>
           
