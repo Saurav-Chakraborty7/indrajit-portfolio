@@ -1,5 +1,6 @@
 "use server";
 
+// @ts-ignore - No types available for pageclip node module
 import Pageclip from "pageclip";
 
 export async function sendContactMessage(data: Record<string, any>) {

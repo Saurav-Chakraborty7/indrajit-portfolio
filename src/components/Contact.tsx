@@ -16,7 +16,8 @@ export default function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    const formData = new FormData(e.currentTarget);
+    const form = e.currentTarget;
+    const formData = new FormData(form);
     const data = Object.fromEntries(formData.entries());
 
     try {
@@ -24,7 +25,7 @@ export default function Contact() {
       
       if (result.success) {
         setSubmitted(true);
-        e.currentTarget.reset();
+        form.reset();
         setTimeout(() => setSubmitted(false), 5000);
       } else {
         alert(result.error || "Something went wrong. Please try again.");
