@@ -6,13 +6,35 @@ import SectionHeading from "./SectionHeading";
 import { HiMail, HiPhone, HiLocationMarker, HiPaperAirplane } from "react-icons/hi";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 
+import { sendContactMessage } from "../actions/pageclip";
+
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 4000);
+    setIsSubmitting(true);
+
+    const formData = new FormData(e.currentTarget);
+    const data = Object.fromEntries(formData.entries());
+
+    try {
+      const result = await sendContactMessage(data);
+      
+      if (result.success) {
+        setSubmitted(true);
+        e.currentTarget.reset();
+        setTimeout(() => setSubmitted(false), 5000);
+      } else {
+        alert(result.error || "Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error submitting form", error);
+      alert("Something went wrong. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -56,10 +78,11 @@ export default function Contact() {
               </div>
               <div>
                 <label htmlFor="message" className="block text-sm font-medium text-slate-700 mb-1.5">Message</label>
-                <textarea id="message" name="message" rows={5} required className="w-full px-4 py-3 text-sm border border-slate-200 rounded-xl bg-white/50 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all resize-none placeholder:text-slate-400" placeholder="Tell me about your project or opportunity..." />
+                <textarea id="message" name="body" rows={5} required className="w-full px-4 py-3 text-sm border border-slate-200 rounded-xl bg-white/50 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all resize-none placeholder:text-slate-400" placeholder="Tell me about your project or opportunity..." />
               </div>
-              <button type="submit" className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 text-sm font-semibold text-white bg-gradient-to-r from-cyan-500 to-cyan-600 rounded-xl hover:from-cyan-600 hover:to-cyan-700 transition-all duration-300 shadow-lg shadow-cyan-500/25 hover:shadow-xl hover:-translate-y-0.5">
-                <HiPaperAirplane className="w-4 h-4 rotate-90" />Send Message
+              <button disabled={isSubmitting} type="submit" className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 text-sm font-semibold text-white bg-gradient-to-r from-cyan-500 to-cyan-600 rounded-xl hover:from-cyan-600 hover:to-cyan-700 transition-all duration-300 shadow-lg shadow-cyan-500/25 hover:shadow-xl hover:-translate-y-0.5 disabled:opacity-70 disabled:cursor-not-allowed">
+                <HiPaperAirplane className={`w-4 h-4 rotate-90 ${isSubmitting ? 'animate-pulse' : ''}`} />
+                {isSubmitting ? "Sending..." : "Send Message"}
               </button>
               {submitted && <motion.p initial={{ opacity: 0, y: 5 }} animate={{ opacity: 1, y: 0 }} className="text-sm text-cyan-600 font-medium">✓ Message sent! I&apos;ll get back to you soon.</motion.p>}
             </form>

@@ -14,8 +14,8 @@ export default function Footer() {
               <span className="text-slate-500 font-light ml-1">.</span>
               <span className="text-slate-400 text-sm font-medium ml-1">SQA</span>
             </a>
-            <p className="text-sm text-slate-400 mt-2 flex items-center gap-1">
-              Built with <HiHeart className="w-4 h-4 text-cyan-400" /> using Next.js & Tailwind CSS
+            <p className="text-sm text-slate-400 mt-2">
+              Ensuring software excellence through precision testing and automation.
             </p>
           </div>
           <div className="flex items-center gap-4">

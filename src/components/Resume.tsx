@@ -37,8 +37,10 @@ export default function Resume() {
             </p>
 
             <a
-              href="/resume.pdf"
-              download
+              href="/Indrajit_Chakraborty.pdf"
+              download="Indrajit_Chakraborty.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-8 py-3.5 text-sm font-semibold text-white bg-gradient-to-r from-cyan-500 to-cyan-600 rounded-full hover:from-cyan-600 hover:to-cyan-700 transition-all duration-300 shadow-lg shadow-cyan-500/25 hover:shadow-xl hover:shadow-cyan-500/30 hover:-translate-y-0.5"
             >
               <HiDownload className="w-5 h-5" />

@@ -39,11 +39,10 @@ export default function Navbar() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-white/90 backdrop-blur-xl shadow-lg shadow-cyan-500/5 border-b border-cyan-100"
-          : "bg-transparent"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
+        ? "bg-white/90 backdrop-blur-xl shadow-lg shadow-cyan-500/5 border-b border-cyan-100"
+        : "bg-transparent"
+        }`}
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-20">
@@ -70,7 +69,10 @@ export default function Navbar() {
               </a>
             ))}
             <a
-              href="#resume"
+              href="/Indrajit_Chakraborty.pdf"
+              download="Indrajit_Chakraborty.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               className="ml-3 px-5 py-2.5 text-sm font-semibold text-white bg-gradient-to-r from-cyan-500 to-cyan-600 rounded-full hover:from-cyan-600 hover:to-cyan-700 transition-all duration-300 shadow-md shadow-cyan-500/25 hover:shadow-lg hover:shadow-cyan-500/30 hover:-translate-y-0.5"
             >
               Resume
@@ -110,7 +112,10 @@ export default function Navbar() {
                 </a>
               ))}
               <a
-                href="#resume"
+                href="/Indrajit_Chakraborty.pdf"
+                download="Indrajit_Chakraborty.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => setMobileOpen(false)}
                 className="block px-4 py-3 text-sm font-semibold text-cyan-600 hover:bg-cyan-50 rounded-lg"
               >

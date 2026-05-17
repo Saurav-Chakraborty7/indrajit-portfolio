@@ -92,7 +92,10 @@ export default function Hero() {
               <HiArrowDown className="w-4 h-4" />
             </a>
             <a
-              href="#resume"
+              href="/Indrajit_Chakraborty.pdf"
+              download="Indrajit_Chakraborty.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-8 py-3.5 text-sm font-semibold text-cyan-600 bg-white border-2 border-cyan-200 rounded-full hover:bg-cyan-50 hover:border-cyan-300 transition-all duration-300 hover:-translate-y-0.5"
             >
               <HiDocumentText className="w-4 h-4" />
