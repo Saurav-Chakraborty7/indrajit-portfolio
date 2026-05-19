@@ -5,22 +5,7 @@ import { motion } from "framer-motion";
 import SectionHeading from "./SectionHeading";
 import { HiCode, HiOutlineTerminal } from "react-icons/hi";
 
-const categories = {
-  testing: [
-    "Manual Testing", "API Testing", "Regression Testing", 
-    "Smoke Testing", "Exploratory Testing", "Automation"
-  ],
-  automation: [
-    "WebdriverIO", "Selenium", "Appium", "Mocha"
-  ],
-  programming: [
-    "JavaScript", "Python", "Java", "C++"
-  ],
-  tools: [
-    "Postman", "JMeter", "TestRail", "ClickUp", 
-    "Jenkins", "GitHub Actions", "Git", "DevTools"
-  ]
-};
+import { categories } from "../data/skills";
 
 export default function Skills() {
   const [activeTab, setActiveTab] = useState("all");
