@@ -14,7 +14,7 @@ export default function Skills() {
   const renderCodeView = () => {
     return (
       <div className="font-mono text-sm sm:text-base leading-relaxed">
-        <span className="text-cyan-600 font-semibold">const</span> <span className="text-slate-800">qaSkills</span> <span className="text-cyan-500">=</span> <span className="text-slate-600">{`{`}</span>
+        <span className="text-cyan-600 font-semibold">const</span> <span className="text-slate-800">sqaSkills</span> <span className="text-cyan-500">=</span> <span className="text-slate-600">{`{`}</span>
         <div className="pl-4 sm:pl-8 py-2">
           {Object.entries(categories).map(([key, items], index, arr) => (
             <div key={key} className={`transition-opacity duration-300 ${activeTab === key || activeTab === 'all' ? 'opacity-100' : 'opacity-30'}`}>
@@ -53,50 +53,49 @@ export default function Skills() {
           {/* Editor Header */}
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between bg-white/60 border-b border-cyan-100 px-4 py-3 gap-4">
             <div className="flex items-center gap-2">
-               <div className="flex gap-2 mr-4">
-                  <div className="w-3 h-3 rounded-full bg-rose-400"></div>
-                  <div className="w-3 h-3 rounded-full bg-amber-400"></div>
-                  <div className="w-3 h-3 rounded-full bg-emerald-400"></div>
-                </div>
-                <div className="flex gap-1 overflow-x-auto hide-scrollbar">
-                  {['all', ...Object.keys(categories)].map((tab) => (
-                    <button
-                      key={tab}
-                      onClick={() => setActiveTab(tab)}
-                      className={`px-3 py-1.5 text-xs font-mono rounded-md whitespace-nowrap transition-colors ${
-                        activeTab === tab 
-                        ? 'bg-cyan-50 text-cyan-700 border border-cyan-200 shadow-sm' 
+              <div className="flex gap-2 mr-4">
+                <div className="w-3 h-3 rounded-full bg-rose-400"></div>
+                <div className="w-3 h-3 rounded-full bg-amber-400"></div>
+                <div className="w-3 h-3 rounded-full bg-emerald-400"></div>
+              </div>
+              <div className="flex gap-1 overflow-x-auto hide-scrollbar">
+                {['all', ...Object.keys(categories)].map((tab) => (
+                  <button
+                    key={tab}
+                    onClick={() => setActiveTab(tab)}
+                    className={`px-3 py-1.5 text-xs font-mono rounded-md whitespace-nowrap transition-colors ${activeTab === tab
+                        ? 'bg-cyan-50 text-cyan-700 border border-cyan-200 shadow-sm'
                         : 'text-slate-500 hover:text-cyan-600 hover:bg-white/50'
                       }`}
-                    >
-                      {tab === 'all' ? 'skills.json' : `${tab}.ts`}
-                    </button>
-                  ))}
-                </div>
+                  >
+                    {tab === 'all' ? 'skills.json' : `${tab}.ts`}
+                  </button>
+                ))}
+              </div>
             </div>
             <div className="hidden sm:flex items-center gap-3 text-slate-500">
-               <HiOutlineTerminal size={18} className="hover:text-cyan-600 transition-colors cursor-pointer" />
-               <HiCode size={18} className="hover:text-cyan-600 transition-colors cursor-pointer" />
+              <HiOutlineTerminal size={18} className="hover:text-cyan-600 transition-colors cursor-pointer" />
+              <HiCode size={18} className="hover:text-cyan-600 transition-colors cursor-pointer" />
             </div>
           </div>
 
           {/* Editor Body */}
           <div className="p-6 sm:p-8 overflow-x-auto bg-white/40">
-             <div className="flex w-full">
-                {/* Line numbers */}
-                <div className="hidden sm:flex flex-col text-slate-400 font-mono text-right pr-6 select-none border-r border-cyan-100 mr-6 shrink-0">
-                  {Array.from({ length: 22 }).map((_, i) => (
-                    <span key={i} className="leading-relaxed">{i + 1}</span>
-                  ))}
-                </div>
-                
-                {/* Code Content */}
-                <div className="w-full">
-                  {renderCodeView()}
-                </div>
-             </div>
+            <div className="flex w-full">
+              {/* Line numbers */}
+              <div className="hidden sm:flex flex-col text-slate-400 font-mono text-right pr-6 select-none border-r border-cyan-100 mr-6 shrink-0">
+                {Array.from({ length: 22 }).map((_, i) => (
+                  <span key={i} className="leading-relaxed">{i + 1}</span>
+                ))}
+              </div>
+
+              {/* Code Content */}
+              <div className="w-full">
+                {renderCodeView()}
+              </div>
+            </div>
           </div>
-          
+
           {/* Editor Footer */}
           <div className="flex items-center justify-between bg-white/60 border-t border-cyan-100 px-4 py-2 text-xs font-mono text-slate-500">
             <div className="flex items-center gap-4">
@@ -104,8 +103,8 @@ export default function Skills() {
               <span className="hover:text-cyan-600 cursor-pointer transition-colors">TypeScript React</span>
             </div>
             <div className="flex items-center gap-2 text-cyan-600">
-               <span className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse"></span>
-               Prettier: ✓
+              <span className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse"></span>
+              Prettier: ✓
             </div>
           </div>
         </motion.div>

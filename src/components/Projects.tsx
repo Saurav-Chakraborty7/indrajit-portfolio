@@ -12,7 +12,7 @@ export default function Projects() {
     <section id="projects" className="py-20 sm:py-28 section-gradient-alt">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
-          title="QA Projects"
+          title="SQA Projects"
           subtitle="Hands-on testing and automation work"
         />
 
