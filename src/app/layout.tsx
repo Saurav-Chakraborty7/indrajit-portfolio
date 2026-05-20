@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   description:
     "Software Quality Assurance Engineer specializing in manual testing, API testing, WebdriverIO automation, and structured QA workflows. View projects, skills, and experience.",
   keywords: [
-    "QA Engineer",
+    "SQA Engineer",
     "Software Testing",
     "WebdriverIO",
     "Selenium",

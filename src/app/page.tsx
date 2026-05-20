@@ -24,6 +24,18 @@ export default function Home() {
       window.scrollTo(0, 0);
     } else {
       document.body.style.overflow = "";
+      
+      // Handle initial scroll based on query params
+      const urlParams = new URLSearchParams(window.location.search);
+      const section = urlParams.get("section");
+      if (section) {
+        setTimeout(() => {
+          const element = document.getElementById(section);
+          if (element) {
+            element.scrollIntoView({ behavior: "smooth" });
+          }
+        }, 800); // Wait for the fade-in animation to complete
+      }
     }
     
     return () => {

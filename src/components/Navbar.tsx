@@ -16,18 +16,27 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleMobileNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string, isMobile: boolean = false) => {
     e.preventDefault();
-    setMobileOpen(false);
+    if (isMobile) {
+      setMobileOpen(false);
+    }
     
     setTimeout(() => {
-      const targetId = href.replace("#", "");
-      const element = document.getElementById(targetId);
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
-        window.history.pushState(null, "", href);
+      const targetId = href.includes("?section=") 
+        ? href.split("?section=")[1] 
+        : href === "/" ? "hero" : href.replace("#", "");
+        
+      if (targetId === "hero") {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      } else {
+        const element = document.getElementById(targetId);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
       }
-    }, 100);
+      window.history.pushState(null, "", href);
+    }, isMobile ? 100 : 0);
   };
 
 
@@ -45,8 +54,8 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-20">
           <a
-            href="#hero"
-            onClick={() => setMobileOpen(false)}
+            href="/"
+            onClick={(e) => handleNavClick(e, "/", false)}
             className="text-xl sm:text-2xl font-bold tracking-tight"
           >
             <span className="gradient-text">Indrajit</span>
@@ -62,6 +71,7 @@ export default function Navbar() {
               <a
                 key={link.href}
                 href={link.href}
+                onClick={(e) => handleNavClick(e, link.href, false)}
                 className="px-4 py-2 text-sm font-medium text-slate-600 hover:text-cyan-600 rounded-lg hover:bg-cyan-50 transition-all duration-200"
               >
                 {link.label}
@@ -104,7 +114,7 @@ export default function Navbar() {
                 <a
                   key={link.href}
                   href={link.href}
-                  onClick={(e) => handleMobileNavClick(e, link.href)}
+                  onClick={(e) => handleNavClick(e, link.href, true)}
                   className="block px-4 py-3 text-sm font-medium text-slate-600 hover:text-cyan-600 hover:bg-cyan-50 rounded-lg transition-colors"
                 >
                   {link.label}

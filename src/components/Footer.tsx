@@ -6,6 +6,22 @@ import { HiArrowUp } from "react-icons/hi";
 export default function Footer() {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
+    window.history.pushState(null, "", "/");
+  };
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const targetId = href.includes("?section=") ? href.split("?section=")[1] : href === "/" ? "hero" : href.replace("#", "");
+    
+    if (targetId === "hero") {
+      scrollToTop();
+    } else {
+      const element = document.getElementById(targetId);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+      window.history.pushState(null, "", href);
+    }
   };
 
   return (
@@ -18,7 +34,7 @@ export default function Footer() {
           
           {/* Brand & Tagline */}
           <div className="md:col-span-1">
-            <a href="#hero" className="text-2xl font-bold tracking-tight inline-block mb-4">
+            <a href="/" onClick={(e) => handleNavClick(e, "/")} className="text-2xl font-bold tracking-tight inline-block mb-4">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Indrajit</span>
               <span className="text-slate-500 font-light ml-1">.</span>
               <span className="text-slate-400 text-sm font-medium ml-1">SQA</span>
@@ -31,11 +47,11 @@ export default function Footer() {
           {/* Links & Socials */}
           <div className="md:col-span-2 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-8">
             <div className="flex flex-wrap gap-6 text-sm font-medium text-slate-400">
-              <a href="#about" className="hover:text-cyan-400 transition-colors">About</a>
-              <a href="#projects" className="hover:text-cyan-400 transition-colors">Projects</a>
-              <a href="#skills" className="hover:text-cyan-400 transition-colors">Skills</a>
-              <a href="#experience" className="hover:text-cyan-400 transition-colors">Experience</a>
-              <a href="#contact" className="hover:text-cyan-400 transition-colors">Contact</a>
+              <a href="?section=about" onClick={(e) => handleNavClick(e, "?section=about")} className="hover:text-cyan-400 transition-colors">About</a>
+              <a href="?section=projects" onClick={(e) => handleNavClick(e, "?section=projects")} className="hover:text-cyan-400 transition-colors">Projects</a>
+              <a href="?section=skills" onClick={(e) => handleNavClick(e, "?section=skills")} className="hover:text-cyan-400 transition-colors">Skills</a>
+              <a href="?section=experience" onClick={(e) => handleNavClick(e, "?section=experience")} className="hover:text-cyan-400 transition-colors">Experience</a>
+              <a href="?section=contact" onClick={(e) => handleNavClick(e, "?section=contact")} className="hover:text-cyan-400 transition-colors">Contact</a>
             </div>
 
             <div className="flex items-center gap-3">

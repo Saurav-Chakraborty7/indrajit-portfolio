@@ -85,7 +85,13 @@ export default function Hero() {
             className="flex flex-wrap items-center justify-center gap-4"
           >
             <a
-              href="#projects"
+              href="?section=projects"
+              onClick={(e) => {
+                e.preventDefault();
+                const element = document.getElementById("projects");
+                if (element) element.scrollIntoView({ behavior: "smooth" });
+                window.history.pushState(null, "", "?section=projects");
+              }}
               className="inline-flex items-center gap-2 px-8 py-3.5 text-sm font-semibold text-white bg-gradient-to-r from-cyan-500 to-cyan-600 rounded-full hover:from-cyan-600 hover:to-cyan-700 transition-all duration-300 shadow-lg shadow-cyan-500/25 hover:shadow-xl hover:shadow-cyan-500/30 hover:-translate-y-0.5"
             >
               View Projects
