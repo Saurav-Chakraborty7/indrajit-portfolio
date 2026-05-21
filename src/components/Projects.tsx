@@ -24,7 +24,7 @@ export default function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-30px" }}
               transition={{ delay: i * 0.15, duration: 0.5 }}
-              className="group glass-card rounded-2xl overflow-hidden hover:shadow-xl hover:shadow-cyan-500/10 transition-all duration-300 hover:-translate-y-1 flex flex-col"
+              className="group glass-card rounded-2xl overflow-hidden shadow-lg shadow-cyan-500/5 hover:shadow-2xl hover:shadow-cyan-500/20 transition-all duration-300 hover:-translate-y-2 flex flex-col relative z-10 hover:border-cyan-400/50"
             >
               {/* Color header bar */}
               <div
