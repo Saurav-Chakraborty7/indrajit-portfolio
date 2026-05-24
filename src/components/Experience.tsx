@@ -35,7 +35,7 @@ export default function Experience() {
                 </div>
 
                 {/* Card */}
-                <div className="flex-1 glass-card rounded-2xl p-6 sm:p-8 hover:shadow-xl hover:shadow-cyan-500/10 transition-all duration-300">
+                <div className="flex-1 glass-card rounded-2xl p-6 sm:p-8 shadow-lg shadow-cyan-500/5 hover:shadow-2xl hover:shadow-cyan-500/20 transition-all duration-300 hover:-translate-y-2 hover:border-cyan-400/50 relative z-10 group">
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-4">
                     <div>
                       <h3 className="text-xl font-bold text-slate-900">

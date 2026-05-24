@@ -44,31 +44,31 @@ export default function Contact() {
         <SectionHeading title="Get in Touch" subtitle="Have a question or want to work together? Reach out below." />
         <div className="grid lg:grid-cols-5 gap-10 max-w-5xl mx-auto">
           <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.6 }} className="lg:col-span-2 space-y-4">
-            <a href="mailto:talkwithindrajit@gmail.com" className="flex items-center gap-4 p-4 rounded-xl glass-card hover:shadow-md transition-all group">
+            <a href="mailto:talkwithindrajit@gmail.com" className="flex items-center gap-4 p-4 rounded-2xl glass-card shadow-lg shadow-cyan-500/5 hover:shadow-2xl hover:shadow-cyan-500/20 transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400/50 relative z-10 group">
               <div className="w-10 h-10 rounded-lg bg-cyan-50 flex items-center justify-center group-hover:bg-cyan-100 transition-colors"><HiMail className="w-5 h-5 text-cyan-600" /></div>
               <div><p className="text-xs text-slate-400 uppercase tracking-wide">Email</p><p className="text-sm font-medium text-slate-700">talkwithindrajit@gmail.com</p></div>
             </a>
-            <a href="tel:+8801705340534" className="flex items-center gap-4 p-4 rounded-xl glass-card hover:shadow-md transition-all group">
+            <a href="tel:+8801705340534" className="flex items-center gap-4 p-4 rounded-2xl glass-card shadow-lg shadow-cyan-500/5 hover:shadow-2xl hover:shadow-cyan-500/20 transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400/50 relative z-10 group">
               <div className="w-10 h-10 rounded-lg bg-cyan-50 flex items-center justify-center group-hover:bg-cyan-100 transition-colors"><HiPhone className="w-5 h-5 text-cyan-600" /></div>
               <div><p className="text-xs text-slate-400 uppercase tracking-wide">Phone</p><p className="text-sm font-medium text-slate-700">+880 1705-340534</p></div>
             </a>
-            <div className="flex items-center gap-4 p-4 rounded-xl glass-card">
+            <div className="flex items-center gap-4 p-4 rounded-2xl glass-card shadow-lg shadow-cyan-500/5 hover:shadow-2xl hover:shadow-cyan-500/20 transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400/50 relative z-10 group">
               <div className="w-10 h-10 rounded-lg bg-cyan-50 flex items-center justify-center"><HiLocationMarker className="w-5 h-5 text-cyan-600" /></div>
               <div><p className="text-xs text-slate-400 uppercase tracking-wide">Location</p><p className="text-sm font-medium text-slate-700">Bangladesh</p></div>
             </div>
             <div className="grid grid-cols-2 gap-4 pt-2">
-              <a href="https://github.com/Saurav-Chakraborty7" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-3 rounded-xl glass-card hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 group">
+              <a href="https://github.com/Saurav-Chakraborty7" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-3 rounded-2xl glass-card shadow-lg shadow-cyan-500/5 hover:shadow-2xl hover:shadow-cyan-500/20 transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400/50 relative z-10 group">
                 <div className="w-10 h-10 rounded-lg bg-slate-50 flex items-center justify-center group-hover:bg-cyan-50 transition-colors"><FaGithub className="w-5 h-5 text-slate-500 group-hover:text-cyan-600 transition-colors" /></div>
                 <div><p className="text-sm font-semibold text-slate-700 group-hover:text-cyan-600 transition-colors">GitHub</p></div>
               </a>
-              <a href="https://linkedin.com/in/indrajit-chakraborty" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-3 rounded-xl glass-card hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 group">
+              <a href="https://linkedin.com/in/indrajit-chakraborty" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-3 rounded-2xl glass-card shadow-lg shadow-cyan-500/5 hover:shadow-2xl hover:shadow-cyan-500/20 transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400/50 relative z-10 group">
                 <div className="w-10 h-10 rounded-lg bg-slate-50 flex items-center justify-center group-hover:bg-cyan-50 transition-colors"><FaLinkedinIn className="w-5 h-5 text-slate-500 group-hover:text-cyan-600 transition-colors" /></div>
                 <div><p className="text-sm font-semibold text-slate-700 group-hover:text-cyan-600 transition-colors">LinkedIn</p></div>
               </a>
             </div>
           </motion.div>
           <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.6, delay: 0.2 }} className="lg:col-span-3">
-            <form onSubmit={handleSubmit} className="glass-card rounded-2xl p-6 sm:p-8 space-y-5">
+            <form onSubmit={handleSubmit} className="glass-card rounded-2xl p-6 sm:p-8 space-y-5 shadow-lg shadow-cyan-500/5 hover:shadow-2xl hover:shadow-cyan-500/20 transition-all duration-300 hover:-translate-y-2 hover:border-cyan-400/50 relative z-10 group">
               <div className="grid sm:grid-cols-2 gap-5">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-1.5">Full Name</label>

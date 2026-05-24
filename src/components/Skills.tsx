@@ -48,7 +48,7 @@ export default function Skills() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.6 }}
-          className="rounded-xl overflow-hidden glass-card shadow-xl shadow-cyan-500/10"
+          className="glass-card rounded-2xl overflow-hidden shadow-lg shadow-cyan-500/5 hover:shadow-2xl hover:shadow-cyan-500/20 transition-all duration-300 hover:-translate-y-2 hover:border-cyan-400/50 relative z-10 group"
         >
           {/* Editor Header */}
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between bg-white/60 border-b border-cyan-100 px-4 py-3 gap-4">

@@ -23,7 +23,7 @@ export default function Certifications() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6 }}
-              className="glass-card rounded-2xl p-6 sm:p-8 hover:shadow-xl hover:shadow-cyan-500/10 transition-all duration-300 animate-pulse-glow"
+              className="glass-card rounded-2xl p-6 sm:p-8 shadow-lg shadow-cyan-500/5 hover:shadow-2xl hover:shadow-cyan-500/20 transition-all duration-300 hover:-translate-y-2 hover:border-cyan-400/50 relative z-10 group animate-pulse-glow"
             >
               <div className="flex items-start gap-4 mb-6">
                 <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-cyan-500 to-cyan-600 flex items-center justify-center shadow-lg shadow-cyan-500/25 shrink-0">

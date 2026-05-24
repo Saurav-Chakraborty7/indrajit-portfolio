@@ -60,7 +60,7 @@ export default function LoadingScreen({ onComplete }: { onComplete: () => void }
           </div>
           <div className="w-10"></div> {/* Spacer for alignment */}
         </div>
-        
+
         {/* Terminal Body */}
         <div className="p-6 sm:p-10 min-h-[350px] flex flex-col justify-end bg-white/50">
           <div className="space-y-4">
@@ -73,7 +73,7 @@ export default function LoadingScreen({ onComplete }: { onComplete: () => void }
                 className="text-sm sm:text-base md:text-lg flex flex-wrap"
               >
                 {line.startsWith(">") ? (
-                  <span className="text-cyan-600 mr-3 select-none">indrajit@qa-env:~$</span>
+                  <span className="text-cyan-600 mr-3 select-none">indrajit@sqa-env:~$</span>
                 ) : null}
                 <span className={i === terminalLines.length - 1 ? "text-cyan-600 font-bold drop-shadow-[0_0_8px_rgba(6,182,212,0.3)]" : "text-slate-600"}>
                   {line.replace("> ", "")}

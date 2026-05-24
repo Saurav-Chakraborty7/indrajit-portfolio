@@ -20,7 +20,7 @@ export default function Resume() {
           transition={{ duration: 0.6 }}
           className="max-w-lg mx-auto text-center"
         >
-          <div className="glass-card rounded-2xl p-8 sm:p-10 hover:shadow-xl hover:shadow-cyan-500/10 transition-all duration-300">
+          <div className="glass-card rounded-2xl p-8 sm:p-10 shadow-lg shadow-cyan-500/5 hover:shadow-2xl hover:shadow-cyan-500/20 transition-all duration-300 hover:-translate-y-2 hover:border-cyan-400/50 relative z-10 group">
             {/* Icon */}
             <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-cyan-500 to-cyan-600 flex items-center justify-center mx-auto mb-6 shadow-lg shadow-cyan-500/25">
               <HiDocumentDownload className="w-10 h-10 text-white" />
